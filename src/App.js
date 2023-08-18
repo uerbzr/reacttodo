@@ -10,13 +10,10 @@ const handleSubmit = (event) => {
   event.preventDefault()
   console.log(event.target[0].value)
   setTasks([...tasks, {text: event.target[0].value, checked:false }])
+  
 }
 
 const handleDelete = (index) => {
-    console.log(tasks, tasks.filter(item => {
-      
-    }))
-
     const updated = tasks.filter((todoItem, todoIndex) => todoIndex !== index)
     setTasks([...updated])
 }
@@ -37,7 +34,7 @@ const handleUpdate = (index, checked) => {
     <div className='app'>
     <main>
         <form onSubmit={handleSubmit}>
-            <input type="text" name="task" />
+            <input id="taskInput" type="text" name="task" />
             <button type="submit">add task</button>
         </form>
 
